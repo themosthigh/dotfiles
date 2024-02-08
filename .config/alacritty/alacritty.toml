@@ -1,0 +1,20 @@
+live_config_reload = true
+
+
+[window]
+# decorations = "None"
+opacity = 0.97
+
+
+[font]
+normal = { family = "JetBrains Mono" }
+bold = { family = "JetBrains Mono" }
+italic = { family = "JetBrains Mono" }
+bold_italic = { family = "JetBrains Mono" }
+
+size = 8
+
+
+[cursor]
+style = { shape = "Block", blinking = "On" }
+vi_mode_style = { shape = "Block", blinking = "On" }
