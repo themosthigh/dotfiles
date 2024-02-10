@@ -1,0 +1,109 @@
+{
+  "position": "top",
+  "height": 20,
+
+  // left
+  "modules-left": [
+    // "custom/logo",
+    "network",
+    "hyprland/workspaces",
+    // "hyprland/window",
+    "tray",
+  ],
+
+  // center
+  "modules-center": ["clock"],
+
+  // right
+  "modules-right": [
+    "pulseaudio",
+    "bluetooth",
+    "cpu",
+    "memory",
+    "battery",
+    "temperature",
+    "custom/wlogout",
+  ],
+
+  "hyprland/workspaces": {
+    "all-outputs": false,
+    "show-workspace-names": true,
+  },
+
+  "clock": {
+    "format": "{:%H %M %S}",
+    "format-alt": "{:%D}",
+    "interval": 1,
+  },
+
+  "bluetooth": {
+    // "format": "{icon} {percentage}%",
+  },
+
+  "pulseaudio": {
+    "tooltip": false,
+    "scroll-step": 5,
+    "format": "{icon} {volume}%",
+    "format-muted": " ",
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "format-icons": {
+      "default": ["", "", ""],
+    },
+  },
+
+  "battery": {
+    "states": {
+      "good": 90,
+      "warning": 30,
+      "critical": 15,
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{time} {icon}",
+    "format-full": " {capacity}%",
+    "format-icons": ["", "", "", ""],
+  },
+
+  "network": {
+    // "interface": "wlp2*", // (Optional) To force the use of this interface
+    "format-wifi": "",
+    "format-ethernet": "",
+    "tooltip-format": "{essid} ({signalStrength}%)",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "⚠",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+  },
+
+  "custom/logo": {
+    "on-click": "wlogout",
+    "format": "",
+  },
+
+  "custom/wlogout": {
+    "on-click": "wlogout",
+    "format": "",
+  },
+
+  "cpu": {
+    "format": " {usage}%",
+    "interval": 5,
+  },
+
+  "memory": {
+    "format": "  {}%",
+    "interval": 5,
+  },
+
+  "temperature": {
+    // "thermal-zone": 2,
+    // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "critical-threshold": 60,
+    "format-critical": "{temperatureC}°C  overheating",
+    "format": "{temperatureC}",
+  },
+
+  "tray": {
+    "icon-size": 12,
+  },
+}

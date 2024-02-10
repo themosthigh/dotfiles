@@ -6,58 +6,61 @@
 /* Spacing inside the element */
 
 * {
-  font-family:
-    JetBrains Mono,
-    monospace;
+  font-family: "icomoon-feather", "Font Awesome 6 Free", "Font Awesome 6 brands",
+    "JetBrains Mono", monospace;
   font-size: 12px;
+  min-height: 0;
+  transition-property: background-color;
+  transition-duration: 0.2s;
 }
 
 window#waybar {
   background-color: rgba(255, 255, 255, 0.2);
   color: @text;
-  transition-property: background-color;
-  transition-duration: 0.5s;
   border-radius: 0px;
-  transition-duration: 0.5s;
-  margin: 16px 16px;
 }
 
 window#waybar.hidden {
   opacity: 0.2;
 }
 
+#workspaces {
+  background: @surface0;
+  margin: 4px;
+  padding: 2px;
+  border-radius: 8px;
+}
+
 #workspaces button {
   color: @text;
-  background: @background3;
-  border-radius: 8px;
-  padding: 0px 10px 0px 10px;
-  margin: 7px 5px 10px 5px;
-  border: 1px solid @subtext1;
 }
 
 #workspaces button:hover {
-  background: @surface0;
+  background: @overlay1;
   color: @text;
 }
 
 #workspaces button.active {
   color: @crust;
   background: @overlay2;
-  border: none;
 }
 
-#custom-launcher,
-#clock,
 #battery,
+#bluetooth,
+#clock,
 #cpu,
 #temperature,
-#backlight,
+#memory,
 #network,
 #pulseaudio,
+#tray,
+#window,
 #custom-dunst,
-#custom-powermenu {
+#custom-logo,
+#custom-powermenu,
+#custom-wlogout {
   padding: 2px 16px;
-  margin: 4px 0px;
+  margin: 4px 2px;
   border-radius: 8px;
   color: @crust;
   border: 2px solid @surface0;
@@ -66,8 +69,6 @@ window#waybar.hidden {
 
 #window,
 #custom-launcher {
-  padding: 0px 25px 0px 20px;
-  margin: 7px 0px 10px 20px;
   background-color: @mauve;
 }
 
@@ -75,8 +76,12 @@ window#waybar.hidden {
   background-color: @lavender;
 }
 
+#tray {
+  background-color: @green;
+}
+
 #temperature {
-  background-color: @blue;
+  background-color: @maroon;
 }
 
 #backlight {
@@ -84,17 +89,14 @@ window#waybar.hidden {
 }
 
 #custom-dunst {
-  padding: 0px 20px 0px 13px;
   background-color: @sky;
 }
 
 #pulseaudio {
-  padding: 0px 20px 0px 17px;
   background-color: @teal;
 }
 
 #network {
-  padding: 0px 15px 0px 20px;
   background-color: @green;
 }
 
@@ -107,9 +109,20 @@ window#waybar.hidden {
 }
 
 #custom-powermenu {
-  padding: 0px 25px 0px 20px;
-  margin: 7px 20px 10px 0px;
   background-color: @maroon;
+}
+
+#custom-wlogout {
+  background-color: white;
+}
+
+#bluetooth {
+  background-color: @peach;
+}
+
+#custom-logo {
+  background-color: @crust;
+  color: @text;
 }
 
 @keyframes blink {
@@ -119,8 +132,10 @@ window#waybar.hidden {
   }
 }
 
-#battery.critical:not(.charging) {
+#battery.critical:not(.charging),
+#temperature.critical {
   color: #f53c3c;
+  border-color: #f53c3c;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;
