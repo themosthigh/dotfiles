@@ -55,6 +55,7 @@ window#waybar.hidden {
 #pulseaudio,
 #tray,
 #window,
+#custom-caffeine,
 #custom-dunst,
 #custom-logo,
 #custom-powermenu,
@@ -88,6 +89,7 @@ window#waybar.hidden {
   background-color: @sapphire;
 }
 
+#custom-caffeine,
 #custom-dunst {
   background-color: @sky;
 }

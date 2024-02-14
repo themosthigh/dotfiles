@@ -5,6 +5,7 @@
   // left
   "modules-left": [
     // "custom/logo",
+    "dunst",
     "network",
     "hyprland/workspaces",
     // "hyprland/window",
@@ -12,7 +13,7 @@
   ],
 
   // center
-  "modules-center": ["clock"],
+  "modules-center": ["clock", "custom/caffeine"],
 
   // right
   "modules-right": [
@@ -105,5 +106,13 @@
 
   "tray": {
     "icon-size": 12,
+  },
+
+  "custom/caffeine": {
+    "exec": "~/dotfiles/.config/waybar/scripts/caffeine.sh",
+    "return-type": "json",
+    "interval": 3,
+    "format-icons": ["", ""],
+    "format": "{icon}",
   },
 }
