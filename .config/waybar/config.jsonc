@@ -32,8 +32,8 @@
   },
 
   "clock": {
-    "format": "{:%H %M %S}",
-    "format-alt": "{:%D}",
+    "format": "{:%D || %H %M %S}",
+    // "format-alt": "{:%D}",
     "interval": 1,
   },
 
@@ -43,9 +43,10 @@
 
   "pulseaudio": {
     "tooltip": false,
-    "scroll-step": 5,
+    "scroll-step": 1,
     "format": "{icon} {volume}%",
     "format-muted": " ",
+    "format-bluetooth": "{icon}{percentage}%",
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "format-icons": {
       "default": ["", "", ""],
@@ -68,7 +69,7 @@
 
   "network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
-    "format-wifi": "",
+    "format-wifi": " {essid}",
     "format-ethernet": "",
     "tooltip-format": "{essid} ({signalStrength}%)",
     "format-linked": "{ifname} (No IP) ",

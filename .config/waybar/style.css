@@ -73,7 +73,8 @@ window#waybar.hidden {
   background-color: @mauve;
 }
 
-#cpu {
+#cpu,
+#memory {
   background-color: @lavender;
 }
 
