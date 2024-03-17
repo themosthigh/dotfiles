@@ -1,4 +1,7 @@
-import = ["./catppuccin-mocha.toml"]
+import = ["./monokai-pro.yaml"]
+
+
+env = { term = "xterm-256color" }
 
 
 live_config_reload = true
@@ -10,9 +13,9 @@ opacity = 0.97
 
 
 [font]
-normal = { family = "JetBrainsMono NF Light" }
-
-size = 8
+normal = { family = "CodeNewRoman Nerd Font" }
+# normal = { family = "JetbrainsMono Nerd Font" }
+size = 10
 
 
 [cursor]

@@ -1,0 +1,59 @@
+theme = "darcula" 
+
+[editor]
+line-number = "relative"
+cursorline = true
+middle-click-paste = false
+preview-completion-insert = false
+completion-replace = true
+bufferline = "multiple"
+color-modes = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.statusline]
+left = ["mode", "version-control"]
+center = ["file-name"]
+right = ["diagnostics", "selections", "position", "file-type"]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "VISUAL"
+
+[editor.lsp]
+display-messages = true
+display-inlay-hints = true
+
+
+[editor.whitespace.render]
+space = "none"
+tab = "none"
+newline = "none"
+
+[editor.whitespace.characters]
+# space = "·"
+# nbsp = "⍽"
+# tab = "→"
+# newline = "⏎"
+# tabpad = "→" # Tabs will look like "→···" (depending on tab width)
+
+[editor.indent-guides]
+render = true
+character = "▏" # Some characters that work well: "▏", "╎", "┆", "┊", "⸽"
+skip-levels = 1
+
+
+### KEYBINDINGS
+
+[keys.normal]
+C-s = ":w"
+# lsp
+l = {a = "code_action"}
+
+[keys.insert]
+C-s = ":w"

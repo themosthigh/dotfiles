@@ -22,3 +22,15 @@ cd ~
 cd dotfiles
 stow .
 ```
+
+# Additional dependencies
+
+```bash
+
+# window manager packages
+yay -S hyprland hypraper wlogout dunst wofi
+
+# terminal emulators
+yay -S kitty alacritty wezterm blackbox-terminal
+
+```

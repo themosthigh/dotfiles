@@ -21,8 +21,15 @@ set -U fish_user_paths $ANDROID_HOME/tools-bin $fish_user_paths
 # flutter
 set -U fish_user_paths /perm/flutter/bin $fish_user_paths
 
+# local bins
+set -U fish_user_paths $HOME/.local/bin $fish_user_paths
+
 # add starfish prompt
 starship init fish | source
 
 # nvchad alias
 alias nvchad="NVIM_APPNAME=nvchad nvim"
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
