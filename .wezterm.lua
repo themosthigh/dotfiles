@@ -50,16 +50,46 @@ local config = wezterm.config_builder()
 config.color_scheme = "Gruvbox Material (Gogh)"
 
 -- fonts
-config.font = wezterm.font("CascadiaCode", {
-	-- weight = "Light",
+config.font = wezterm.font_with_fallback({
+	{
+		family = "MonaspiceAr Nerd Font",
+		italic = false,
+	},
 })
-config.font_size = 9
+
+config.font_rules = {
+	{
+		italic = true,
+		font = wezterm.font_with_fallback({
+			{
+				family = "MonaspiceRn Nerd Font",
+				italic = true,
+			},
+		}),
+	},
+}
+
+config.font_size = 8
 config.line_height = 1.2
 config.cell_width = 1
 
+--ligature settings
+config.harfbuzz_features = {
+	"ss01",
+	"ss02",
+	"ss03",
+	"ss04",
+	"ss05",
+	"ss06",
+	"ss07",
+	"ss08",
+	"calt",
+	"dlig",
+}
+
 -- window frame
 config.window_frame = {
-	font = wezterm.font("CascadiaCode", {
+	font = wezterm.font("JetBrains Mono", {
 		weight = "Bold",
 		italic = true,
 	}),
