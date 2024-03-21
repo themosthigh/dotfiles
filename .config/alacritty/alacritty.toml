@@ -10,12 +10,14 @@ live_config_reload = true
 [window]
 # decorations = "None"
 opacity = 0.97
+dynamic_padding = true
 
 
 [font]
-normal = { family = "CodeNewRoman Nerd Font" }
-# normal = { family = "JetbrainsMono Nerd Font" }
-size = 10
+normal = { family = "MonaspiceNe Nerd Font", style = "Light" }
+italic = { family = "MonaspiceRn Nerd Font", style = "Light" }
+size = 8
+offset = { y = 3 }
 
 
 [cursor]

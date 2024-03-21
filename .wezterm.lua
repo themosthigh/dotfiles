@@ -87,6 +87,8 @@ config.harfbuzz_features = {
 	"dlig",
 }
 
+config.window_background_opacity = 0.99
+
 -- window frame
 config.window_frame = {
 	font = wezterm.font("JetBrains Mono", {
