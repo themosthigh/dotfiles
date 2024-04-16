@@ -8,6 +8,7 @@
     "dunst",
     "network",
     "hyprland/workspaces",
+    "sway/workspaces",
     // "hyprland/window",
     "tray",
   ],
