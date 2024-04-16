@@ -5,6 +5,9 @@ end
 # Go bin 
 set -U fish_user_paths $HOME/go/bin/ $fish_user_paths
 
+# Fly.io
+set -U fish_user_paths $HOME/.fly/bin/ $fish_user_paths
+
 # Java Home
 set -Ux JAVA_HOME ~/.sdkman/candidates/java/17.0.10-ms/
 

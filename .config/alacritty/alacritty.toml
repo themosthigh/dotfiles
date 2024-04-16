@@ -17,7 +17,7 @@ dynamic_padding = true
 normal = { family = "MonaspiceNe Nerd Font", style = "Light" }
 italic = { family = "MonaspiceRn Nerd Font", style = "Light" }
 size = 8
-offset = { y = 3 }
+offset = { y = 2 }
 
 
 [cursor]
