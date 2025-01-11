@@ -1,0 +1,8 @@
+theme = "Kanagawa Wave"
+font-family = "MonaspiceNe Nerd Font Mono"
+font-family-italic = "MonaspicaseRn Nerd Font Mono"
+font-feature = +calt
+font-feature = +liga
+font-size = 10
+
+background-opacity = "0.95"
