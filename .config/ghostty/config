@@ -1,8 +1,15 @@
+# Window theme
 theme = "Kanagawa Wave"
-font-family = "MonaspiceNe Nerd Font Mono"
-font-family-italic = "MonaspicaseRn Nerd Font Mono"
-font-feature = +calt
-font-feature = +liga
-font-size = 10
 
-background-opacity = "0.95"
+# Font settings
+font-family = "MonaspiceNe Nerd Font Mono"
+font-family-italic = "MonaspiceRn Nerd Font Mono"
+font-size = 9
+window-inherit-font-size = false
+
+# background configuration
+background-opacity = 0.95
+background-blur-radius = 7
+
+# cell config
+adjust-cell-height = 20%
