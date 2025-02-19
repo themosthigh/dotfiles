@@ -32,7 +32,7 @@ set -Ux JAVA_HOME ~/.sdkman/candidates/java/current/bin/
 switch (uname)
   case Linux
 # Android Home
-    set -Ux ANDROID_HOME /perm/Android/Sdk
+    set -Ux ANDROID_HOME /gamma/Android/Sdk
   case Darwin
     set -Ux ANDROID_HOME $HOME/Library/Android/Sdk
 end
@@ -45,7 +45,7 @@ set -U fish_user_paths $ANDROID_HOME/tools-bin $fish_user_paths
 
 
 # flutter
-set -U fish_user_paths /perm/flutter/bin $fish_user_paths
+set -U fish_user_paths /gamma/Linux/flutter/bin $fish_user_paths
 
 # local bins
 set -U fish_user_paths $HOME/.local/bin $fish_user_paths

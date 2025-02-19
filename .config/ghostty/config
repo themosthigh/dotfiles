@@ -2,13 +2,13 @@
 theme = "Kanagawa Wave"
 
 # Font settings
-font-family = "MonaspiceNe Nerd Font Mono"
-font-family-italic = "MonaspiceRn Nerd Font Mono"
+font-family = "Monaspace Neon"
+font-family-italic = "Monaspace Radon"
 font-size = 9
 window-inherit-font-size = false
 
 # background configuration
-background-opacity = 0.95
+background-opacity = 0.99
 background-blur-radius = 7
 
 # cell config
