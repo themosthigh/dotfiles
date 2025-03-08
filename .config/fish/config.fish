@@ -6,7 +6,8 @@ alias vim="nvim"
 set -gx EDITOR nvim
 
 
-if uname = Darwin
+switch uname 
+  case Darwin
 # Local bins
     set -U fish_user_paths /opt/local/bin/ $fish_user_paths
 end
