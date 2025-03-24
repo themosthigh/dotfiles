@@ -6,10 +6,11 @@ font-family = "Monaspace Neon"
 font-family-italic = "Monaspace Radon"
 font-size = 9
 window-inherit-font-size = false
+font-feature = "'calt', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'ss09', 'liga'",
 
 # background configuration
-background-opacity = 0.99
+background-opacity = 0.98
 background-blur-radius = 7
 
 # cell config
-adjust-cell-height = 20%
+adjust-cell-height = 50%

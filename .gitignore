@@ -1,3 +1,8 @@
 .config/lazygit/state.yml
 .config/tmux/plugins
 .config/fish/fish_variables
+.config/gh
+.config/github-copilot
+.config/zed/prompts/prompts-library-db.0.mdb
+.config/nvim
+.config/nvim

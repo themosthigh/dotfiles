@@ -61,5 +61,8 @@ alias nvchad="NVIM_APPNAME=nvchad nvim"
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 
+# cargo
+set --export PATH $HOME/.cargo/bin $PATH
+
 export PATH="/Users/marvin/.lando/bin:$PATH"; #landopath
 
