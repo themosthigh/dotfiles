@@ -6,3 +6,8 @@
 .config/zed/prompts/prompts-library-db.0.mdb
 .config/nvim
 .config/nvim
+.config/diesel_cli
+.config/fish/completions
+.config/fish/conf.d
+.config/fish/functions
+.config/flutter

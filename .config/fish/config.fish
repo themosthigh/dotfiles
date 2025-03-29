@@ -9,26 +9,29 @@ set -gx EDITOR nvim
 switch uname 
   case Darwin
 # Local bins
-    set -U fish_user_paths /opt/local/bin/ $fish_user_paths
+    set -U fish_user_paths /opt/local/bin $fish_user_paths
 end
 
 # Homebrew
-    set -U fish_user_paths /opt/homebrew/bin/ $fish_user_paths
+    set -U fish_user_paths /opt/homebrew/bin $fish_user_paths
 
 # Go bin 
-set -U fish_user_paths $HOME/go/bin/ $fish_user_paths
+set -U fish_user_paths $HOME/go/bin $fish_user_paths
 
 # Lando bin 
-set -U fish_user_paths $HOME/.lando/bin/ $fish_user_paths
+set -U fish_user_paths $HOME/.lando/bin $fish_user_paths
 
 # Laravel composer
-set -U fish_user_paths $HOME/.composer/vendor/bin/ $fish_user_paths
+set -U fish_user_paths $HOME/.composer/vendor/bin $fish_user_paths
 
 # Fly.io
-set -U fish_user_paths $HOME/.fly/bin/ $fish_user_paths
+set -U fish_user_paths $HOME/.fly/bin $fish_user_paths
+
+# Sdk manager
+set -U fish_user_paths $HOME/.sdkman/bin $fish_user_paths
 
 # Java Home
-set -Ux JAVA_HOME ~/.sdkman/candidates/java/current/bin/
+set -Ux JAVA_HOME ~/.sdkman/candidates/java/current/bin
 
 switch (uname)
   case Linux
@@ -45,8 +48,12 @@ set -U fish_user_paths $ANDROID_HOME/tools $fish_user_paths
 set -U fish_user_paths $ANDROID_HOME/tools-bin $fish_user_paths
 
 
+# dart
+set -U fish_user_paths $HOME/.pub-cache/bin $fish_user_paths
+
 # flutter
 set -U fish_user_paths /gamma/Linux/flutter/bin $fish_user_paths
+set -U fish_user_paths $HOME/fvm/default/bin $fish_user_paths
 
 # local bins
 set -U fish_user_paths $HOME/.local/bin $fish_user_paths
