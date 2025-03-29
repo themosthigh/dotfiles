@@ -13,4 +13,4 @@ background-opacity = 0.98
 background-blur-radius = 7
 
 # cell config
-adjust-cell-height = 50%
+adjust-cell-height = 30%
