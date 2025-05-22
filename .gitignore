@@ -11,3 +11,4 @@
 .config/fish/conf.d
 .config/fish/functions
 .config/flutter
+.config/.DS_Store

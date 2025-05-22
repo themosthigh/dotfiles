@@ -6,14 +6,17 @@ alias vim="nvim"
 set -gx EDITOR nvim
 
 
-switch uname 
-  case Darwin
-# Local bins
-    set -U fish_user_paths /opt/local/bin $fish_user_paths
+switch uname
+    case Darwin
+        # Local bins
+        set -U fish_user_paths /opt/local/bin $fish_user_paths
 end
 
 # Homebrew
-    set -U fish_user_paths /opt/homebrew/bin $fish_user_paths
+set -U fish_user_paths /opt/homebrew/bin $fish_user_paths
+
+# Nix darwin
+set -U fish_user_paths /run/current-system/sw/bin $fish_user_paths
 
 # Go bin 
 set -U fish_user_paths $HOME/go/bin $fish_user_paths
@@ -34,11 +37,11 @@ set -U fish_user_paths $HOME/.sdkman/bin $fish_user_paths
 set -Ux JAVA_HOME ~/.sdkman/candidates/java/current/bin
 
 switch (uname)
-  case Linux
-# Android Home
-    set -Ux ANDROID_HOME /gamma/Android/Sdk
-  case Darwin
-    set -Ux ANDROID_HOME $HOME/Library/Android/Sdk
+    case Linux
+        # Android Home
+        set -Ux ANDROID_HOME /gamma/Android/Sdk
+    case Darwin
+        set -Ux ANDROID_HOME $HOME/Library/Android/Sdk
 end
 
 # important paths
@@ -71,5 +74,5 @@ set --export PATH $BUN_INSTALL/bin $PATH
 # cargo
 set --export PATH $HOME/.cargo/bin $PATH
 
-export PATH="/Users/marvin/.lando/bin:$PATH"; #landopath
-
+export PATH="/Users/marvin/.lando/bin:$PATH"
+#landopath
