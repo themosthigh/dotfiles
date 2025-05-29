@@ -9,43 +9,74 @@
 
   outputs = { self, nix-darwin, nixpkgs }@inputs:
   let
-    configuration = { pkgs, ... }: {
+    configuration = { pkgs, config, ... }: {
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
-      environment.systemPackages =
-        [
-          pkgs.neofetch
+        environment.systemPackages =
+          [
+            pkgs.neofetch
 
-          # pkgs.mkalias # TODO: add aliases for macos
-          # pkgs.ghostty # FIXME: package is currently broken
+            pkgs.mkalias # TODO: add aliases for macos
 
-          pkgs.nerd-fonts.monaspace
-          pkgs.nerd-fonts.fira-code
-          pkgs.monaspace
-          pkgs.cascadia-code
-        ];
+            pkgs.nerd-fonts.monaspace
+            pkgs.nerd-fonts.fira-code
+            pkgs.monaspace
+            pkgs.cascadia-code
 
-      # Necessary for using flakes on this system.
-      nix.settings.experimental-features = "nix-command flakes";
+            pkgs.stow         
+            pkgs.starship
 
-      # Enable alternative shell support in nix-darwin.
-      programs.fish.enable = true;
+            pkgs.slack
+            pkgs.firefox
 
-      # Set Git commit hash for darwin-version.
-      system.configurationRevision = self.rev or self.dirtyRev or null;
+            pkgs.devenv
+          ];
 
-      # Used for backwards compatibility, please read the changelog before changing.
-      # $ darwin-rebuild changelog
-      system.stateVersion = 6;
+        # Necessary for using flakes on this system.
+        nix.settings.experimental-features = "nix-command flakes";
+        nixpkgs.config.allowUnfree = true; 
 
-      # The platform the configuration will be used on.
-      nixpkgs.hostPlatform = "aarch64-darwin";
+        # Enable alternative shell support in nix-darwin.
+        programs.fish.enable = true;
+
+        # Set Git commit hash for darwin-version.
+        system.configurationRevision = self.rev or self.dirtyRev or null;
+
+        # Used for backwards compatibility, please read the changelog before changing.
+        # $ darwin-rebuild changelog
+        system.stateVersion = 6;
+
+        # The platform the configuration will be used on.
+         nixpkgs.hostPlatform = "aarch64-darwin";
+
+        # Activation script
+        system.activationScripts.applications.text = let
+          env = pkgs.buildEnv {
+            name = "system-applications";
+            paths = config.environment.systemPackages;
+            pathsToLink = "/Applications";
+          };
+        in
+          pkgs.lib.mkForce ''
+          # Set up applications.
+          echo "setting up /Applications..." >&2
+          rm -rf /Applications/Nix\ Apps
+          mkdir -p /Applications/Nix\ Apps
+          find ${env}/Applications -maxdepth 1 -type l -exec readlink '{}' + |
+          while read -r src; do
+            app_name=$(basename "$src")
+            echo "copying $src" >&2
+            ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
+          done
+          ''; 
+
+
     };
   in
   {
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#simple
-    darwinConfigurations."simple" = nix-darwin.lib.darwinSystem {
+    darwinConfigurations."darwin" = nix-darwin.lib.darwinSystem {
       modules = [
           configuration
           ./modules/developer-tools.nix

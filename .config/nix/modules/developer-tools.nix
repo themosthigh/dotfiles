@@ -44,7 +44,7 @@
   eslint_d
 
   # rust
-  # rustup
+  rustup
   rust-analyzer
 
   # toml
@@ -53,6 +53,7 @@
   # dart/flutter
   dart
   # flutter
+  fvm
 
   # java
   jdk11	
