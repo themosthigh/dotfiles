@@ -21,6 +21,8 @@
 
           pkgs.nerd-fonts.monaspace
           pkgs.nerd-fonts.fira-code
+          pkgs.monaspace
+          pkgs.cascadia-code
         ];
 
       # Necessary for using flakes on this system.

@@ -44,7 +44,7 @@
   eslint_d
 
   # rust
-  rustup
+  # rustup
   rust-analyzer
 
   # toml

@@ -42,6 +42,9 @@ switch (uname)
         set -Ux ANDROID_HOME /gamma/Android/Sdk
     case Darwin
         set -Ux ANDROID_HOME $HOME/Library/Android/Sdk
+        # set -U fish_user_paths /opt/homebrew/opt/libiconv/bin $fish_user_paths
+        # set -gx LDFLAGS "-L/opt/homebrew/opt/libiconv/lib"
+        # set -gx CPPFLAGS "-I/opt/homebrew/opt/libiconv/include"
 end
 
 # important paths
