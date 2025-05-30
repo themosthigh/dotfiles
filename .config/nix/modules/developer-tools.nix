@@ -1,64 +1,63 @@
-{ pkgs, ... }:
-{
-  environment.systemPackages =  with pkgs; [
-  # general tools 
-  git
-  gh
-  lazygit
-  ripgrep
-  android-tools
+{ pkgs, ... }: {
+  environment.systemPackages = with pkgs; [
+    # general tools 
+    git
+    gh
+    lazygit
+    ripgrep
+    android-tools
 
-  # editors
-  helix
-  neovim
+    # editors
+    helix
+    neovim
 
-  gnumake
-    
-  # nix
-  nil
+    gnumake
 
-  # lua
-  lua-language-server
-  stylua
+    # nix
+    nil
+    nixfmt-classic
+    # lua
+    lua-language-server
+    stylua
 
-  # c/cpp
-  gcc
-  
-  # go
-  go
-  gopls
-  golines
-  gofumpt
-  goimports-reviser
-  gomodifytags
+    # c/cpp
+    gcc
 
-  # js/ts
-  nodejs_20
-  nodePackages.pnpm
-  nodePackages.typescript-language-server
-  nodePackages.svelte-language-server
-  # nodePackages_latest.vue-language-server
-  nodePackages.prettier
-  prettierd
-  emmet-ls
-  eslint_d
+    # go
+    go
+    gopls
+    golines
+    gofumpt
+    goimports-reviser
+    gomodifytags
 
-  # rust
-  rustup
-  rust-analyzer
+    # js/ts
+    nodejs_20
+    nodePackages.pnpm
+    nodePackages.typescript-language-server
+    nodePackages.svelte-language-server
+    # nodePackages_latest.vue-language-server
+    nodePackages.prettier
+    prettierd
+    emmet-ls
+    eslint_d
 
-  # toml
-  taplo
+    # rust
+    rustup
+    rust-analyzer
 
-  # dart/flutter
-  dart
-  # flutter
-  fvm
+    # toml
+    taplo
 
-  # java
-  jdk11	
+    # dart/flutter
+    dart
+    # flutter
+    fvm
 
-  # zig
-  zig
+    # java
+    jdk11
+
+    # zig
+    zig
   ];
 }
