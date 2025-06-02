@@ -6,6 +6,7 @@
     lazygit
     ripgrep
     android-tools
+    # docker
 
     # editors
     helix
@@ -59,5 +60,9 @@
 
     # zig
     zig
+
+    # postgres compilation
+    postgresql
+    openssl
   ];
 }

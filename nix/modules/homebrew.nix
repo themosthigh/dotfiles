@@ -1,7 +1,7 @@
 { ... }: {
   homebrew = {
     enable = true;
-    casks = [ "parallels" "vagrant" ];
+    casks = [ "vagrant" "ghostty" "slack" "figma" "firefox" ];
     onActivation.cleanup = "zap";
   };
 }

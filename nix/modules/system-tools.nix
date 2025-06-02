@@ -11,9 +11,7 @@
 
     pkgs.starship
     pkgs.stow
-
-    pkgs.slack
-    pkgs.firefox
+    pkgs.fzf
   ];
 }
 
