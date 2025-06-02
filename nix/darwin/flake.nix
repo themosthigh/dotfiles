@@ -16,6 +16,10 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     };
+    homebrew-bundle = {
+      url = "github:homebrew/homebrew-bundle";
+      flake = false;
+    };
     hashicorp = {
       url = "github:hashicorp/homebrew-tap";
       flake = false;

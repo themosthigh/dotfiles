@@ -2,6 +2,8 @@
 #          │                          Prompt                          │
 #          ╰──────────────────────────────────────────────────────────╯
 eval "$(starship init zsh)"
+# colorscript exec crunchbang-mini
+pokeget random
 
 #          ╭──────────────────────────────────────────────────────────╮
 #          │                         Plugins                          │
@@ -61,3 +63,28 @@ alias ls='ls --color'
 #          │                    Shell integrations                    │
 #          ╰──────────────────────────────────────────────────────────╯
 eval "$(fzf --zsh)"
+
+
+
+#          ╭──────────────────────────────────────────────────────────╮
+#          │                          Paths                           │
+#          ╰──────────────────────────────────────────────────────────╯
+export PATH="$HOME/.cargo/bin":$PATH
+export PATH="$HOME/.fly/bin":$PATH
+export PATH="$HOME/.go/bin":$PATH
+export PATH="$HOME/.local/bin":$PATH
+export PATH="$HOME/.sdkman/bin":$PATH
+
+
+# library paths
+export LIBRARY_PATH=$LIBRARY_PATH:$(brew --prefix)/lib:$(brew --prefix)/opt/libiconv/lib
+
+
+#          ╭──────────────────────────────────────────────────────────╮
+#          │                      Auto-generated                      │
+#          ╰──────────────────────────────────────────────────────────╯
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /Users/marv/.dart-cli-completion/zsh-config.zsh ]] && . /Users/marv/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]

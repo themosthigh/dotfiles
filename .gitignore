@@ -14,3 +14,5 @@
 .config/.DS_Store
 .config/nvim
 .config/nvim
+.DS_Store
+.config/composer
