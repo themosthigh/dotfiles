@@ -12,6 +12,7 @@
     pkgs.starship
     pkgs.stow
     pkgs.fzf
+    pkgs.dwt1-shell-color-scripts
   ];
 }
 

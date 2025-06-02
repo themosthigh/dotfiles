@@ -78,8 +78,8 @@
         modules = [
           configuration
           # ./darwin/settings.nix
-          ./modules/developer-tools.nix
-          ./modules/system-tools.nix
+          ../modules/developer-tools.nix
+          ../modules/system-tools.nix
           nix-homebrew.darwinModules.nix-homebrew
           {
             nix-homebrew = {
@@ -94,7 +94,7 @@
               mutableTaps = false;
             };
           }
-          ./modules/homebrew.nix
+          ../modules/homebrew.nix
         ];
       };
 
