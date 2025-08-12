@@ -70,6 +70,9 @@ starship init fish | source
 # nvchad alias
 alias nvchad="NVIM_APPNAME=nvchad nvim"
 
+# nix sudo
+alias sudo="/run/wrappers/bin/sudo"
+
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
