@@ -1,0 +1,103 @@
+# Define the vtsls language server
+[language-server.vtsls]
+command = "vtsls"
+args = ["--stdio"]
+languages = { typescript = [
+  { formatCommand = "prettier --stdin-filepath ${INPUT}", formatStdin = true },
+] }
+
+[language-server.tailwindcss]
+command = "tailwindcss-language-server"
+
+[language-server.vtsls.config.typescript.inlayHints]
+parameterNames = { enabled = "all" }
+parameterTypes = { enabled = true }
+variableTypes = { enabled = true }
+propertyDeclarationTypes = { enabled = true }
+enumMemberValues = { enabled = true }
+
+# Define the Prettier formatter as an external command
+[[language]]
+name = "typescript"
+file-types = ["js", "jsx", "ts", "tsx"]
+formatter = { command = "prettier", args = [
+  "--stdin",
+  "--parser",
+  "typescript",
+] }
+# language-servers = [{ name = "typescript-language-server", except-features = ["format"] }]
+
+
+[language-server.typescript-language-server]
+command = "vtsls"
+args = ["--stdio"]
+config.hostInfo = "helix"
+
+[language-server.typescript-language-server.config.typescript]
+updateImportsOnFileMove.enabled = "always"
+suggest.completeFunctionCalls = true
+tsserver.enableTracing = true
+inlayHints.parameterNames.enabled = "all"
+inlayHints.parameterTypes.enabled = true
+inlayHints.variableTypes.enabled = true
+inlayHints.propertyDeclarationTypes.enabled = true
+inlayHints.functionLikeReturnTypes = true
+inlayHints.enumMemberValues.enabled = true
+format.enable = false
+format.semicolons = "remove"
+preferences.importModuleSpecifier = "non-relative"
+preferences.importModuleSpecifierEnding = "auto"
+tsserver.pluginPaths = ["typescript-plugin-css-modules", "./node_modules"]
+
+
+# Define the Prettier formatter as an external command
+# [[language]]
+# name = "jsx"
+# file-types = ["jsx"]
+# formatter = { command = "prettier", args = [
+#   "--stdin",
+#   "--parser",
+#   "typescript",
+# ] }
+# language-servers = [{ name = "vtsls", except-features = ["format"] }]
+
+[[language]]
+name = "javascript"
+file-types = ["js"]
+formatter = { command = "prettier", args = [
+  # "--stdin",
+  "--parser",
+  "typescript",
+] }
+language-servers = [{ name = "vtsls", except-features = ["format"] }]
+
+[[language]]
+name = "typescript"
+file-types = ["ts"]
+formatter = { command = "prettier", args = [
+  # "--stdin",
+  "--parser",
+  "typescript",
+] }
+language-servers = [
+  { name = "vtsls", except-features = [
+    "format",
+  ] },
+  { name = "tailwindcss" },
+]
+
+[[language]]
+name = "tsx"
+file-types = ["tsx"]
+formatter = { command = "prettier", args = ["--parser", "typescript"] }
+language-servers = [
+  { name = "vtsls", except-features = [
+    "format",
+  ] },
+  { name = "tailwindcss" },
+]
+
+[[language]]
+name = "markdown"
+file-types = ["md", "mdx"]
+formatter = { command = "prettier", args = ["--parser", "markdown"] }

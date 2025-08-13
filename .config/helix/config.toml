@@ -8,6 +8,7 @@ preview-completion-insert = false
 completion-replace = true
 bufferline = "multiple"
 color-modes = true
+end-of-line-diagnostics = "hint"
 
 [editor.cursor-shape]
 insert = "bar"
@@ -27,8 +28,10 @@ mode.select = "VISUAL"
 
 [editor.lsp]
 display-messages = true
-display-inlay-hints = true
+display-inlay-hints = false
 
+[editor.inline-diagnostics]
+cursor-line = "warning" # show warnings and errors on the cursorline inline
 
 [editor.whitespace.render]
 space = "none"
@@ -51,9 +54,10 @@ skip-levels = 1
 ### KEYBINDINGS
 
 [keys.normal]
-C-s = ":w"
+# C-s = ":w"
 # lsp
-l = {a = "code_action"}
+l = {a = "code_action", f = ":format"}
 
-[keys.insert]
-C-s = ":w"
+# [keys.insert]
+# C-s = ":w"
+
