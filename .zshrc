@@ -58,6 +58,7 @@ bindkey '^[[B' history-search-forward # down arrow
 #          ╰──────────────────────────────────────────────────────────╯
 alias ls='ls --color'
 # alias vim='nvim'
+alias neofetch='hyfetch'
 
 #          ╭──────────────────────────────────────────────────────────╮
 #          │                    Shell integrations                    │
@@ -65,15 +66,20 @@ alias ls='ls --color'
 eval "$(fzf --zsh)"
 
 
-
 #          ╭──────────────────────────────────────────────────────────╮
-#          │                          Paths                           │
+#          │                  Environment variables                   │
 #          ╰──────────────────────────────────────────────────────────╯
+export EDITOR='nvim'
 export PATH="$HOME/.cargo/bin":$PATH
 export PATH="$HOME/.fly/bin":$PATH
 export PATH="$HOME/.go/bin":$PATH
 export PATH="$HOME/.local/bin":$PATH
 export PATH="$HOME/.sdkman/bin":$PATH
+export PATH="$HOME/fvm/versions/master/bin":$PATH
+
+export ANDROID_HOME="$HOME/Android/Sdk"
+
+export PATH="$HOME/.config/herd-lite/bin:$PATH"
 
 
 # library paths

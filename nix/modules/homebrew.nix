@@ -2,12 +2,17 @@
   homebrew = {
     enable = true;
     casks = [
-      "vagrant"
+      # "vagrant"
       "ghostty"
-      "slack"
+      # "slack"
       "figma"
       "firefox"
       "font-monaspace-nerd-font"
+      "obsidian"
+      "spotify"
+      "telegram-desktop"
+      "hashicorp/tap/hashicorp-vagrant"
+      "onlyoffice"
     ];
     brews = [ "libiconv" ];
     onActivation.cleanup = "zap";

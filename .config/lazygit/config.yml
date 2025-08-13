@@ -18,3 +18,10 @@ theme:
     - '#cdd6f4'
   searchingActiveBorderColor:
     - '#f9e2af'
+
+gui:
+  sidePanelWidth: 0.2 # gives you more space to show things side-by-side
+git:
+  paging:
+    colorArg: never
+    pager: ydiff -p cat -s --wrap --width={{columnWidth}}

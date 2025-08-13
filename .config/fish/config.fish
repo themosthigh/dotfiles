@@ -63,6 +63,7 @@ set -U fish_user_paths $HOME/fvm/default/bin $fish_user_paths
 
 # local bins
 set -U fish_user_paths $HOME/.local/bin $fish_user_paths
+set -U fish_user_paths $HOME/.config/herd-lite/bin $fish_user_paths
 
 # add starfish prompt
 starship init fish | source

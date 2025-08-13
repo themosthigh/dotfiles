@@ -10,7 +10,7 @@ window-inherit-font-size = false
 font-feature = "'calt', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'ss09', 'liga'",
 
 # background configuration
-background-opacity = 0.97
+background-opacity = 0.95
 background-blur-radius = 7
 
 # cell config
