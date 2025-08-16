@@ -56,7 +56,9 @@ skip-levels = 1
 [keys.normal]
 # C-s = ":w"
 # lsp
+[keys.normal.space]
 l = {a = "code_action", f = ":format"}
+
 
 # [keys.insert]
 # C-s = ":w"

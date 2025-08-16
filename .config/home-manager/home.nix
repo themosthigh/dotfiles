@@ -30,10 +30,13 @@
     pkgs.git
     pkgs.lazygit
     pkgs.gh
+    pkgs.delta
 
     pkgs.ripgrep
     pkgs.flatpak
     pkgs.chafa
+
+    pkgs.taplo
 
 
     # Rust
@@ -47,6 +50,8 @@
     # pkgs.android-studio
     pkgs.android-tools
     pkgs.fvm
+
+    pkgs.nodePackages.prettier
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
