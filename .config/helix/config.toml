@@ -59,6 +59,9 @@ skip-levels = 1
 [keys.normal.space]
 l = {a = "code_action", f = ":format"}
 
+[keys.normal.space.g]
+f = "changed_file_picker"
+g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
 
 # [keys.insert]
 # C-s = ":w"
