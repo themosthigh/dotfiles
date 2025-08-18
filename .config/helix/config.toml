@@ -34,12 +34,12 @@ display-inlay-hints = false
 cursor-line = "warning" # show warnings and errors on the cursorline inline
 
 [editor.whitespace.render]
-space = "none"
-tab = "none"
-newline = "none"
+# space = "all"
+# tab = "all"
+# newline = "all"
 
-[editor.whitespace.characters]
-# space = "·"
+# [editor.whitespace.characters]
+# # space = "·"
 # nbsp = "⍽"
 # tab = "→"
 # newline = "⏎"
@@ -54,10 +54,31 @@ skip-levels = 1
 ### KEYBINDINGS
 
 [keys.normal]
-# C-s = ":w"
-# lsp
+# C-s = ":w" # Ctrl + S to save
+C-h = "jump_view_left"
+C-j = "jump_view_down"
+C-k = "jump_view_up"
+C-l = "jump_view_right"
+C-e = "expand_selection"
+"C-." = "repeat_last_motion"
+"{" = "goto_prev_paragraph"
+"}" = "goto_next_paragraph"
+
 [keys.normal.space]
+# LSP options
 l = {a = "code_action", f = ":format"}
+# Open Yazi from helix
+e = [
+    ':sh rm -f /tmp/unique-file',
+    ':insert-output yazi %{buffer_name} --chooser-file=/tmp/unique-file',
+    ':insert-output echo "\x1b[?1049h\x1b[?2004h" > /dev/tty',
+    ':open %sh{cat /tmp/unique-file}',
+    ':redraw',
+]
+
+[keys.normal.space.b]
+f = "buffer_picker"
+o = ":buffer-close-others"
 
 [keys.normal.space.g]
 f = "changed_file_picker"
@@ -65,4 +86,3 @@ g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
 
 # [keys.insert]
 # C-s = ":w"
-

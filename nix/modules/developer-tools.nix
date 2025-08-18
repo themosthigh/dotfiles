@@ -4,13 +4,18 @@
     git
     gh
     lazygit
+    delta
     ripgrep
+    yazi
+    
     android-tools
     # docker
 
     # editors
     helix
     neovim
+
+    zellij
 
     gnumake
 
@@ -35,14 +40,18 @@
     # js/ts
     nodejs_20
     nodePackages.pnpm
+    nodePackages.yarn
     nodePackages.typescript-language-server
     nodePackages.svelte-language-server
-    # nodePackages_latest.vue-language-server
     nodePackages.prettier
     prettierd
     emmet-ls
     eslint_d
-
+    vtsls
+    tailwindcss-language-server
+    vscode-langservers-extracted
+    uwu-colors
+    
     # rust
     rustup
     rust-analyzer
@@ -62,7 +71,7 @@
     zig
 
     # postgres compilation
-    postgresql
-    openssl
+    # postgresql
+    # openssl
   ];
 }

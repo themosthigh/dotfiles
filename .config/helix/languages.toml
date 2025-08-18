@@ -1,3 +1,24 @@
+[language-server.emmet]
+command = "emmet-ls"
+args = ["--stdio"]
+
+
+[language-server.eslint]
+command = "vscode-eslint-language-server"
+args = ["--stdio"]
+
+
+[language-server.eslint.config]
+codeActionsOnSave = { mode = "all", "source.fixAll.eslint" = false }
+format = { enable = false }
+nodePath = ""
+quiet = false
+rulesCustomizations = []
+run = "onType"
+validate = "on"
+experimental = {}
+problems = { shortenToSingleLine = false }
+
 # Define the vtsls language server
 [language-server.vtsls]
 command = "vtsls"
@@ -9,23 +30,16 @@ languages = { typescript = [
 [language-server.tailwindcss]
 command = "tailwindcss-language-server"
 
+[language-server.colors]
+command = "uwu_colors"
+args = ["--stdio"]
+
 [language-server.vtsls.config.typescript.inlayHints]
 parameterNames = { enabled = "all" }
 parameterTypes = { enabled = true }
 variableTypes = { enabled = true }
 propertyDeclarationTypes = { enabled = true }
 enumMemberValues = { enabled = true }
-
-# Define the Prettier formatter as an external command
-[[language]]
-name = "typescript"
-file-types = ["js", "jsx", "ts", "tsx"]
-formatter = { command = "prettier", args = [
-  "--stdin",
-  "--parser",
-  "typescript",
-] }
-# language-servers = [{ name = "typescript-language-server", except-features = ["format"] }]
 
 
 [language-server.typescript-language-server]
@@ -50,30 +64,9 @@ preferences.importModuleSpecifierEnding = "auto"
 tsserver.pluginPaths = ["typescript-plugin-css-modules", "./node_modules"]
 
 
-# Define the Prettier formatter as an external command
-# [[language]]
-# name = "jsx"
-# file-types = ["jsx"]
-# formatter = { command = "prettier", args = [
-#   "--stdin",
-#   "--parser",
-#   "typescript",
-# ] }
-# language-servers = [{ name = "vtsls", except-features = ["format"] }]
-
 [[language]]
-name = "javascript"
-file-types = ["js"]
-formatter = { command = "prettier", args = [
-  # "--stdin",
-  "--parser",
-  "typescript",
-] }
-language-servers = [{ name = "vtsls", except-features = ["format"] }]
-
-[[language]]
-name = "typescript"
-file-types = ["ts"]
+name = "jsx"
+file-types = ["js", "jsx"]
 formatter = { command = "prettier", args = [
   # "--stdin",
   "--parser",
@@ -83,19 +76,35 @@ language-servers = [
   { name = "vtsls", except-features = [
     "format",
   ] },
-  { name = "tailwindcss" },
+  { name = "emmet" },
+  { name = "eslint" },
 ]
 
 [[language]]
 name = "tsx"
-file-types = ["tsx"]
+file-types = ["ts", "tsx"]
 formatter = { command = "prettier", args = ["--parser", "typescript"] }
 language-servers = [
   { name = "vtsls", except-features = [
     "format",
   ] },
-  { name = "tailwindcss" },
+  { name = "tailwindcss-ls" },
+  { name = "emmet" },
+  { name = "eslint" },
 ]
+auto-format = false
+
+
+[[language]]
+name = "css"
+file-types = ["css"]
+formatter = { command = "prettier", args = ["--parser", "css"] }
+language-servers = [
+  { name = "vscode-css-language-server" },
+  { name = "tailwindcss-ls" },
+  { name = "colors" },
+]
+
 
 [[language]]
 name = "markdown"

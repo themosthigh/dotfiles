@@ -1,0 +1,6 @@
+inherits = "kanagawa"
+"ui.background" ={}
+
+["comment"]
+modifiers = ["italic", "bold"]
+fg = "fujiGray"

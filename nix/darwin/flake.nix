@@ -95,7 +95,7 @@
                 "homebrew/homebrew-cask" = inputs.homebrew-cask;
                 "hashicorp/tap" = inputs.hashicorp;
               };
-              mutableTaps = false;
+              mutableTaps = true;
             };
           }
           ../modules/homebrew.nix
