@@ -25,4 +25,4 @@ git:
   paging:
     colorArg: always
     # pager: ydiff -p cat -s --wrap --width={{columnWidth}}
-    pager: delta --dark --paging=never --line-numbers
+    # pager: delta --dark --paging=never --line-numbers

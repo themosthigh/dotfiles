@@ -94,3 +94,9 @@ export LIBRARY_PATH=$LIBRARY_PATH:$(brew --prefix)/lib:$(brew --prefix)/opt/libi
 ## Completion scripts setup. Remove the following line to uninstall
 [[ -f /Users/marv/.dart-cli-completion/zsh-config.zsh ]] && . /Users/marv/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
+
+. "$HOME/.cargo/env"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
