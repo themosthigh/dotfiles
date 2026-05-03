@@ -1,25 +1,66 @@
-# Window theme
+# Window Configuration
+window-decoration = false
+window-padding-x = 4
+window-padding-y = 4
+# Cursor Configuration
+cursor-style = block
+cursor-style-blink = true
+
+# Scrollback
+scrollback-limit = 3023
+
+# Terminal features
+mouse-hide-while-typing = true
+copy-on-select = false
+confirm-close-surface = false
+
+# Disable annoying copied to clipboard
+app-notifications = no-clipboard-copy,no-config-reload
+
+# Key bindings for common actions
+#keybind = ctrl+c=copy_to_clipboard
+#keybind = ctrl+v=paste_from_clipboard
+keybind = ctrl+shift+n=new_window
+keybind = ctrl+t=new_tab
+keybind = ctrl+plus=increase_font_size:1
+keybind = ctrl+minus=decrease_font_size:1
+keybind = ctrl+zero=reset_font_size
+
+# Material 3 UI elements
+unfocused-split-opacity = 0.7
+unfocused-split-fill = #44464f
+
+# Tab configuration
+gtk-titlebar = false
+
+# Shell integration
+shell-integration = detect
+shell-integration-features = cursor,sudo,title,no-cursor
+keybind = shift+enter=text:\n
+
+# Rando stuff
+gtk-single-instance = true
+
+# Dank color generation
 theme = "TokyoNight"
 
-# Font settings
-# font-family = "JetBrainsMono Nerd Font Mono"
+font-family = "Monaspace Neon Var"
+font-family-italic = "Monaspace Radon Var"
 
-# font-family = "Monaspace Neon Var"
-# font-family-italic = "Monaspace Radon Var"
-
-font-family = "Cascadia Code"
-font-family-italic = "Cascadia Code"
+# font-family = "Cascadia Code"
+# font-family-italic = "Cascadia Code"
 
 
-font-size = 13
+font-size = 9
 window-inherit-font-size = false
 font-feature = "'calt', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'ss09', 'liga'",
 font-variation = wght=300
 font-variation-bold = wght=800
 
 # background configuration
-background-opacity = 0.97
+background-opacity = 0.99
 background-blur-radius = 7
+
 
 # cell config
 adjust-cell-height = 30%
