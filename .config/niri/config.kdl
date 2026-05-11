@@ -6,7 +6,7 @@ config-notification {
     disable-failed
 }
 // Outputs from existing configuration
-/-output "eDP-1" {
+output "DP-2" {
     // Uncomment this line to disable this output.
     // off
 
@@ -40,7 +40,7 @@ config-notification {
 
 gestures {
     hot-corners {
-        
+        off
     }
 }
 
