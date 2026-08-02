@@ -3,15 +3,17 @@ env = { term = "xterm-256color" }
 
 [window]
 # decorations = "None"
-opacity = 0.98
+opacity = 0.97
 dynamic_padding = true
+padding = { x = 8, y = 4 }
 
 
 [font]
 normal = { family = "Monaspace Neon Var", style = "Light" }
 italic = { family = "Monaspace Radon Var", style = "Light" }
 size = 8
-offset = { y = 2 }
+offset = { y = 4 }
+glyph_offset = { x = 0, y = 2 }
 
 
 [cursor]
@@ -23,3 +25,10 @@ vi_mode_style = { shape = "Block", blinking = "On" }
 
 live_config_reload = true
 import = ["~/dotfiles/.config/alacritty/themes/kanagawa_wave.toml"]
+
+[terminal.shell]
+program = "bash"
+args = [
+  "-c",
+  "if command -v zellij &> /dev/null; then zellij; else exec bash; fi",
+]
