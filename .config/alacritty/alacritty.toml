@@ -8,9 +8,9 @@ dynamic_padding = true
 
 
 [font]
-normal = { family = "Monaspace Neon Var", style = "Light" }
-italic = { family = "Monaspace Radon Var", style = "Light" }
-size = 8
+normal = { family = "JetbrainsMono Nerd Font", style = "Light" }
+italic = { family = "Monaspace Radon NF", style = "Light" }
+size = 9
 offset = { y = 2 }
 
 
@@ -19,7 +19,5 @@ style = { shape = "Block", blinking = "On" }
 vi_mode_style = { shape = "Block", blinking = "On" }
 
 [general]
-
-
 live_config_reload = true
 import = ["~/dotfiles/.config/alacritty/themes/kanagawa_wave.toml"]

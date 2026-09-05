@@ -1,31 +1,22 @@
+[language-server.biome]
+command = "biome"
+args = ["lsp-proxy"]
+
+[language-server.oxlint]
+command = "npx"
+args = ["oxlint", "--lsp"]
+
+[language-server.oxfmt]
+command = "npx"
+args = ["oxfmt", "--lsp"]
+
 [language-server.emmet]
 command = "emmet-ls"
 args = ["--stdio"]
 
-
-[language-server.eslint]
-command = "vscode-eslint-language-server"
-args = ["--stdio"]
-
-
-[language-server.eslint.config]
-codeActionsOnSave = { mode = "all", "source.fixAll.eslint" = false }
-format = { enable = false }
-nodePath = ""
-quiet = false
-rulesCustomizations = []
-run = "onType"
-validate = "on"
-experimental = {}
-problems = { shortenToSingleLine = false }
-
-# Define the vtsls language server
 [language-server.vtsls]
 command = "vtsls"
 args = ["--stdio"]
-languages = { typescript = [
-  { formatCommand = "prettier --stdin-filepath ${INPUT}", formatStdin = true },
-] }
 
 [language-server.tailwindcss]
 command = "tailwindcss-language-server"
@@ -41,70 +32,42 @@ variableTypes = { enabled = true }
 propertyDeclarationTypes = { enabled = true }
 enumMemberValues = { enabled = true }
 
-
-[language-server.typescript-language-server]
-command = "vtsls"
-args = ["--stdio"]
-config.hostInfo = "helix"
-
-[language-server.typescript-language-server.config.typescript]
-updateImportsOnFileMove.enabled = "always"
-suggest.completeFunctionCalls = true
-tsserver.enableTracing = true
-inlayHints.parameterNames.enabled = "all"
-inlayHints.parameterTypes.enabled = true
-inlayHints.variableTypes.enabled = true
-inlayHints.propertyDeclarationTypes.enabled = true
-inlayHints.functionLikeReturnTypes = true
-inlayHints.enumMemberValues.enabled = true
-format.enable = false
-format.semicolons = "remove"
-preferences.importModuleSpecifier = "non-relative"
-preferences.importModuleSpecifierEnding = "auto"
-tsserver.pluginPaths = ["typescript-plugin-css-modules", "./node_modules"]
-
-
 [[language]]
 name = "jsx"
+auto-format = true
 file-types = ["js", "jsx"]
-formatter = { command = "prettier", args = [
-  # "--stdin",
-  "--parser",
-  "typescript",
-] }
+formatter = { command = "prettier", args = ["--parser", "typescript"] }
+# Delegating formatting to attached LSPs (oxfmt/biome)
 language-servers = [
-  { name = "vtsls", except-features = [
-    "format",
-  ] },
+  # { name = "oxfmt" },
+  { name = "vtsls", except-features = ["format"] },
   { name = "emmet" },
-  { name = "eslint" },
+  { name = "oxlint" },
 ]
 
 [[language]]
 name = "tsx"
+auto-format = true
 file-types = ["ts", "tsx"]
 formatter = { command = "prettier", args = ["--parser", "typescript"] }
 language-servers = [
-  { name = "vtsls", except-features = [
-    "format",
-  ] },
-  { name = "tailwindcss-ls" },
+  # { name = "oxfmt" },
+  { name = "oxlint" },
+  { name = "vtsls", except-features = ["format"] },
+  { name = "tailwindcss" },
   { name = "emmet" },
-  { name = "eslint" },
 ]
-auto-format = false
-
 
 [[language]]
 name = "css"
+auto-format = true
 file-types = ["css"]
 formatter = { command = "prettier", args = ["--parser", "css"] }
 language-servers = [
   { name = "vscode-css-language-server" },
-  { name = "tailwindcss-ls" },
+  { name = "tailwindcss" },
   { name = "colors" },
 ]
-
 
 [[language]]
 name = "markdown"

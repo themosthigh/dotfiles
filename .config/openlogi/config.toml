@@ -1,0 +1,158 @@
+schema_version = 4
+selected_device = "direct:046d:b034:serial:2447ze6l0gn8"
+
+[app_settings]
+launch_at_login = true
+check_for_updates = false
+auto_install_updates = false
+update_prompt_seen = true
+show_in_menu_bar = true
+capture_mouse_events = true
+auto_download_assets = true
+asset_source = "automatic"
+thumbwheel_sensitivity = 14
+appearance = "dark"
+theme_light = "Gruvbox Light"
+theme_dark = "Hybrid Dark"
+
+[devices]
+
+[devices."direct:046d:b034:serial:2447ze6l0gn8"]
+invert_scroll = true
+
+[devices."direct:046d:b034:serial:2447ze6l0gn8".identity]
+display_name = "MX Master 3S"
+codename = "MX Master 3S"
+kind = "mouse"
+
+[devices."direct:046d:b034:serial:2447ze6l0gn8".identity.model_info]
+entity_count = 3
+unit_id = [
+    0,
+    0,
+    0,
+    0,
+]
+model_ids = [
+    45108,
+    0,
+    0,
+]
+extended_model_id = 0
+
+[keyboard]
+
+[devices."direct:046d:b034:serial:2447ze6l0gn8".identity.model_info.transports]
+usb = false
+equad = false
+btle = true
+bluetooth = false
+
+[devices."direct:046d:b034:serial:2447ze6l0gn8".disabled_gestures.Forward]
+Up = "MissionControl"
+Down = "ShowDesktop"
+Left = "PrevTab"
+Right = "NextTab"
+Click = "BrowserForward"
+
+[devices."direct:046d:b034:serial:2447ze6l0gn8".bindings.GestureButton ]
+Up = "NewTab"
+Down = "CaptureRegion"
+Left = "PrevTab"
+Right = "NextTab"
+Click = "MissionControl"
+
+[devices."direct:046d:b034:serial:2447ze6l0gn8".identity.capabilities]
+buttons = true
+pointer = true
+lighting = false
+scroll_inversion = true
+hires_wheel = true
+thumbwheel = true
+haptic_feedback = false
+haptic_panel = false
+
+[devices."direct:046d:b034:serial:2447ze6l0gn8".smartshift]
+mode = "ratchet"
+auto_disengage = 10
+tunable_torque = 0
+
+[devices."direct:046d:b034:unit:2d6926ec".identity]
+display_name = "MX Master 3S"
+codename = "MX Master 3S"
+kind = "mouse"
+
+[devices."direct:046d:b369:serial:2503cep3mjm8".identity]
+display_name = "MX Keys Mini"
+codename = "MX Keys Mini"
+kind = "keyboard"
+
+[devices."direct:046d:b034:unit:2d6926ec".identity.model_info]
+entity_count = 3
+unit_id = [
+    0,
+    0,
+    0,
+    0,
+]
+model_ids = [
+    45108,
+    0,
+    0,
+]
+extended_model_id = 0
+
+[devices."direct:046d:b034:serial:2447ze6l0gn8".bindings]
+Forward= "PreviousDesktop"
+Back = "NextDesktop"
+DpiToggle = "CycleDpiPresets"
+
+[devices."direct:046d:b034:unit:2d6926ec".identity.model_info.transports]
+usb = false
+equad = false
+btle = true
+bluetooth = false
+
+[devices."direct:046d:b369:serial:2503cep3mjm8".identity.model_info]
+entity_count = 3
+unit_id = [
+    0,
+    0,
+    0,
+    0,
+]
+model_ids = [
+    45929,
+    0,
+    0,
+]
+extended_model_id = 0
+
+[devices."direct:046d:b034:unit:2d6926ec".identity.capabilities]
+buttons = true
+pointer = true
+lighting = false
+scroll_inversion = true
+hires_wheel = true
+thumbwheel = true
+haptic_feedback = false
+haptic_panel = false
+
+[devices."direct:046d:b369:serial:2503cep3mjm8".identity.model_info.transports]
+usb = false
+equad = false
+btle = true
+bluetooth = false
+
+[keyboard.bindings]
+f8 = "LaunchpadShow"
+
+[devices."direct:046d:b369:serial:2503cep3mjm8".identity.capabilities]
+buttons = true
+pointer = false
+lighting = false
+scroll_inversion = false
+hires_wheel = false
+thumbwheel = false
+haptic_feedback = false
+haptic_panel = false

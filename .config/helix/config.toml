@@ -9,6 +9,7 @@ completion-replace = true
 bufferline = "multiple"
 color-modes = true
 end-of-line-diagnostics = "hint"
+auto-format = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -32,6 +33,7 @@ display-inlay-hints = false
 
 [editor.inline-diagnostics]
 cursor-line = "warning" # show warnings and errors on the cursorline inline
+other-lines = "warning"
 
 [editor.whitespace.render]
 # space = "all"

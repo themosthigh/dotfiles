@@ -7,15 +7,142 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "vim_mode": true,
-  "ui_font_size": 16,
-  "buffer_font_size": 13,
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "proxy": "",
+  "agent_servers": {
+    "antigravity-acp": {
+      "type": "registry"
+    }
+  },
+  "linked_edits": false,
+  "toolbar": {
+    "breadcrumbs": true
+  },
+  "completions": {
+    "lsp_fetch_timeout_ms": 0
+  },
+  "show_edit_predictions": false,
+  "terminal": {
+    "font_family": "JetBrainsMono Nerd Font"
+  },
+  "cli_default_open_behavior": "existing_window",
+  "agent_buffer_font_size": 8.0,
+  "diff_view_style": "split",
+  "git_panel": {
+    "dock": "left",
+    "tree_view": true
+  },
+  "format_on_save": "on",
+  "edit_predictions": {
+    "mode": "subtle",
+    "provider": "zed"
+  },
+  "vim": {
+    "cursor_shape": {
+      "insert": "hollow",
+    },
+    "toggle_relative_line_numbers": true,
+  },
+  "helix_mode": true,
+  "diagnostics": {
+    "inline": {
+      "enabled": true,
+    },
+  },
+  "tabs": {
+    "show_diagnostics": "all",
+  },
+  "disable_ai": false,
+  "ui_font_weight": 400.0,
+  "ui_font_family": ".SystemUIFont",
+  "buffer_font_weight": 500.0,
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "project_panel": {
+    "diagnostic_badges": true,
+    "dock": "left",
+  },
+  "base_keymap": "VSCode",
+  "icon_theme": {
+    "mode": "light",
+    "light": "Material Icon Theme",
+    "dark": "Zed (Default)",
+  },
+  "vim_mode": false,
+  "ui_font_size": 12.0,
+  "buffer_font_size": 9.0,
   "theme": {
-    "mode": "system",
-    "light": "One Light",
-    "dark": "One Dark"
+    "mode": "dark",
+    "light": "Gruvbox Light",
+    "dark": "Kanagawa Wave",
   },
   "agent": {
-    "enabled": false
+    "dock": "right",
+    "enabled": false,
+  },
+  "prettier": {
+    "allowed": false,
+  },
+  "lsp": {
+    "vtsls": {
+      "settings": {
+        "typescript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always"
+          }
+        },
+        "javascript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always"
+          }
+        }
+      },
+      "enable_lsp_tasks": true
+    },
+    "oxfmt": {
+      "initialization_options": {
+        "settings": {
+          "fmt.configPath": null
+        }
+      }
+    }
+  },
+  "languages": {
+    "TSX": {
+      "format_on_save": "on",
+      "formatter": {
+        "language_server": {
+          "name": "oxfmt"
+        }
+      }
+    },
+    "TypeScript": {
+      "format_on_save": "on",
+      "formatter": {
+        "language_server": {
+          "name": "oxfmt"
+        }
+      }
+    },
+    "CSS": {
+      "format_on_save": "on",
+      "formatter": {
+        "language_server": {
+          "name": "oxfmt"
+        }
+      }
+    },
+    "JSON": {
+      "format_on_save": "on",
+      "formatter": {
+        "language_server": {
+          "name": "oxfmt"
+        }
+      }
+    }
   }
 }
