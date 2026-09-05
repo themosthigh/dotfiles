@@ -6,35 +6,7 @@ alias vim="nvim"
 set -gx EDITOR nvim
 
 
-switch uname
-    case Darwin
-        # Local bins
-        set -U fish_user_paths /opt/local/bin $fish_user_paths
-end
-
-# Homebrew
-set -U fish_user_paths /opt/homebrew/bin $fish_user_paths
-
-# Nix darwin
-set -U fish_user_paths /run/current-system/sw/bin $fish_user_paths
-
-# Go bin 
-set -U fish_user_paths $HOME/go/bin $fish_user_paths
-
-# Lando bin 
-set -U fish_user_paths $HOME/.lando/bin $fish_user_paths
-
-# Laravel composer
-set -U fish_user_paths $HOME/.composer/vendor/bin $fish_user_paths
-
-# Fly.io
-set -U fish_user_paths $HOME/.fly/bin $fish_user_paths
-
-# Sdk manager
-set -U fish_user_paths $HOME/.sdkman/bin $fish_user_paths
-
-# Java Home
-set -Ux JAVA_HOME ~/.sdkman/candidates/java/current/bin
+# Base Environment Variables (Session-scoped)
 
 switch (uname)
     case Linux
@@ -53,33 +25,36 @@ set -U fish_user_paths $ANDROID_HOME/platform-tools $fish_user_paths
 set -U fish_user_paths $ANDROID_HOME/tools $fish_user_paths
 set -U fish_user_paths $ANDROID_HOME/tools-bin $fish_user_paths
 
+# Android Paths
+fish_add_path $ANDROID_HOME/emulator
+fish_add_path $ANDROID_HOME/platform-tools
+fish_add_path $ANDROID_HOME/cmdline-tools
+fish_add_path $ANDROID_HOME/build-tools
 
-# dart
-set -U fish_user_paths $HOME/.pub-cache/bin $fish_user_paths
+# Language Toolchains
+fish_add_path $HOME/.pub-cache/bin
+fish_add_path /gamma/Linux/flutter/bin
+fish_add_path $HOME/fvm/default/bin
+fish_add_path $HOME/.local/bin
+fish_add_path $HOME/.config/herd-lite/bin
 
-# flutter
-set -U fish_user_paths /gamma/Linux/flutter/bin $fish_user_paths
-set -U fish_user_paths $HOME/fvm/default/bin $fish_user_paths
+# Local binaries
+fish_add_path $HOME/.cargo/bin
 
-# local bins
-set -U fish_user_paths $HOME/.local/bin $fish_user_paths
-set -U fish_user_paths $HOME/.config/herd-lite/bin $fish_user_paths
-
-# add starfish prompt
+# Prompt
 starship init fish | source
 
 # nvchad alias
 alias nvchad="NVIM_APPNAME=nvchad nvim"
 
-# nix sudo
-# alias sudo="/run/wrappers/bin/sudo"
-
-# bun
-set --export BUN_INSTALL "$HOME/.bun"
-set --export PATH $BUN_INSTALL/bin $PATH
-
-# cargo
-set --export PATH $HOME/.cargo/bin $PATH
-
-export PATH="/Users/marvin/.lando/bin:$PATH"
-#landopath
+# pnpm
+switch (uname)
+    case Linux
+        set -gx PNPM_HOME "$HOME/.local/share/pnpm"
+    case Darwin
+        set -gx PNPM_HOME "$HOME/Library/pnpm"
+end
+if not string match -q -- "$PNPM_HOME" $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end

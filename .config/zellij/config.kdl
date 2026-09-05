@@ -7,3 +7,5 @@ ui {
         rounded_corners true
     }
 }
+
+mirror_session true // prevents tearing on my helix config

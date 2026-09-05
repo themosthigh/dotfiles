@@ -1,37 +1,34 @@
+[language-server.biome]
+command = "biome"
+args = ["lsp-proxy"]
+
+[language-server.uwu]
+command = "uwu_colors"
+
+[language-server.oxlint]
+command = "npx"
+args = ["oxlint", "--lsp"]
+
+[language-server.oxfmt]
+command = "npx"
+args = ["oxfmt", "--lsp"]
+[language-server.rust-analyzer]
+comman="rust-analyzer"
+
 [language-server.emmet]
-command = "emmet-ls"
+command = "emmet-language-server"
 args = ["--stdio"]
 
-
-[language-server.eslint]
-command = "vscode-eslint-language-server"
-args = ["--stdio"]
-
-
-[language-server.eslint.config]
-codeActionsOnSave = { mode = "all", "source.fixAll.eslint" = false }
-format = { enable = false }
-nodePath = ""
-quiet = false
-rulesCustomizations = []
-run = "onType"
-validate = "on"
-experimental = {}
-problems = { shortenToSingleLine = false }
-
-# Define the vtsls language server
-[language-server.vtsls]
-command = "vtsls"
-args = ["--stdio"]
-languages = { typescript = [
-  { formatCommand = "prettier --stdin-filepath ${INPUT}", formatStdin = true },
-] }
 
 [language-server.tailwindcss]
 command = "tailwindcss-language-server"
 
 [language-server.colors]
 command = "uwu_colors"
+args = ["--stdio"]
+
+[language-server.vtsls]
+command = "vtsls"
 args = ["--stdio"]
 
 [language-server.vtsls.config.typescript.inlayHints]
@@ -41,6 +38,13 @@ variableTypes = { enabled = true }
 propertyDeclarationTypes = { enabled = true }
 enumMemberValues = { enabled = true }
 
+[language-server.vtsls.config.typescript.preferences]
+importModuleSpecifier = "non-relative"
+preferTypeOnlyAutoImports = true
+
+[language-server.vtsls.config.javascript.preferences]
+importModuleSpecifier = "non-relative"
+
 
 [language-server.typescript-language-server]
 command = "vtsls"
@@ -48,65 +52,80 @@ args = ["--stdio"]
 config.hostInfo = "helix"
 
 [language-server.typescript-language-server.config.typescript]
-updateImportsOnFileMove.enabled = "always"
-suggest.completeFunctionCalls = true
-tsserver.enableTracing = true
-inlayHints.parameterNames.enabled = "all"
-inlayHints.parameterTypes.enabled = true
-inlayHints.variableTypes.enabled = true
-inlayHints.propertyDeclarationTypes.enabled = true
-inlayHints.functionLikeReturnTypes = true
-inlayHints.enumMemberValues.enabled = true
 format.enable = false
 format.semicolons = "remove"
+inlayHints.enumMemberValues.enabled = true
+inlayHints.functionLikeReturnTypes = true
+inlayHints.parameterNames.enabled = "all"
+inlayHints.parameterTypes.enabled = true
+inlayHints.propertyDeclarationTypes.enabled = true
+inlayHints.variableTypes.enabled = true
 preferences.importModuleSpecifier = "non-relative"
 preferences.importModuleSpecifierEnding = "auto"
+suggest.completeFunctionCalls = true
+tsserver.enableTracing = true
 tsserver.pluginPaths = ["typescript-plugin-css-modules", "./node_modules"]
+updateImportsOnFileMove.enabled = "always"
 
 
 [[language]]
 name = "jsx"
+auto-format = true
 file-types = ["js", "jsx"]
-formatter = { command = "prettier", args = [
-  # "--stdin",
-  "--parser",
-  "typescript",
-] }
+formatter = { command = "oxfmt", args = ["--parser", "typescript"] }
+# Delegating formatting to attached LSPs (oxfmt/biome)
 language-servers = [
-  { name = "vtsls", except-features = [
-    "format",
-  ] },
   { name = "emmet" },
-  { name = "eslint" },
+  { name = "oxfmt" },
+  { name = "oxlint" },
+  { name = "uwu"},
+  { name = "vtsls", except-features = ["format"] },
 ]
 
 [[language]]
 name = "tsx"
-file-types = ["ts", "tsx"]
-formatter = { command = "prettier", args = ["--parser", "typescript"] }
+auto-format = true
+file-types = ["tsx"]
+comment-token = "//"
+block-comment-tokens = { start = "{/*", end = "*/}" }
 language-servers = [
-  { name = "vtsls", except-features = [
-    "format",
-  ] },
-  { name = "tailwindcss-ls" },
   { name = "emmet" },
-  { name = "eslint" },
+  { name = "oxfmt" },
+  { name = "oxlint" },
+  { name = "tailwindcss" },
+  { name = "uwu"},
+  { name = "vtsls", except-features = ["format"] },
 ]
-auto-format = false
 
+[[language]]
+name = "typescript"
+auto-format = true
+file-types = ["ts", "cts", "mts"]
+language-servers = [
+  { name = "oxfmt" },
+  { name = "oxlint" },
+  { name = "uwu"},
+  { name = "vtsls", except-features = ["format"] },
+]
 
 [[language]]
 name = "css"
+auto-format = true
 file-types = ["css"]
 formatter = { command = "prettier", args = ["--parser", "css"] }
 language-servers = [
   { name = "vscode-css-language-server" },
-  { name = "tailwindcss-ls" },
+  { name = "tailwindcss" },
   { name = "colors" },
 ]
-
 
 [[language]]
 name = "markdown"
 file-types = ["md", "mdx"]
-formatter = { command = "prettier", args = ["--parser", "markdown"] }
+formatter = { command = "oxfmt", args = ["--parser", "markdown"] }
+text-width = 160
+soft-wrap = { enable = true, wrap-at-text-width = true }
+
+[[language]]
+name = "rust"
+auto-format = true

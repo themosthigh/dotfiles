@@ -4,11 +4,15 @@ theme = "kanagawa"
 line-number = "relative"
 cursorline = true
 middle-click-paste = false
-preview-completion-insert = false
 completion-replace = true
 bufferline = "multiple"
 color-modes = true
 end-of-line-diagnostics = "hint"
+auto-format = true
+
+
+auto-completion = true
+preview-completion-insert = false
 
 [editor.cursor-shape]
 insert = "bar"
@@ -31,7 +35,8 @@ display-messages = true
 display-inlay-hints = false
 
 [editor.inline-diagnostics]
-cursor-line = "warning" # show warnings and errors on the cursorline inline
+cursor-line = "warning" # show warnings and errors on the cursorline inline, multiple lines
+other-lines = "disable"
 
 [editor.whitespace.render]
 # space = "all"
@@ -75,6 +80,8 @@ e = [
     ':open %sh{cat /tmp/unique-file}',
     ':redraw',
 ]
+# Alpha dashboard
+a = { q = ":quit-all", c = ":config-open" }
 
 [keys.normal.space.b]
 f = "buffer_picker"
@@ -83,6 +90,8 @@ o = ":buffer-close-others"
 [keys.normal.space.g]
 f = "changed_file_picker"
 g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
+b = ":echo %sh{git blame -L %{cursor_line},+1 %{buffer_name}}"
 
-# [keys.insert]
+[keys.insert]
 # C-s = ":w"
+"C-space" = "completion" 
