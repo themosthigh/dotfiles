@@ -1,28 +1,24 @@
 # Window Configuration
 window-padding-x = 4
 window-padding-y = 4
+
 # Cursor Configuration
 cursor-style = block
 cursor-style-blink = true
 
 # Scrollback
-scrollback-limit = 100000
+scrollback-limit = 1000000
 
-# Disable annoying copied to clipboard
-app-notifications = no-clipboard-copy,no-config-reload
-
-
-# Dank color generation
 theme = "TokyoNight"
 
-font-family = "Monaspace Neon Var"
-font-family-italic = "Monaspace Radon Var"
+font-family = "Monaspace Neon NF"
+font-family-italic = "Monaspace Radon NF"
 
 # font-family = "Cascadia Code"
 # font-family-italic = "Cascadia Code"
 
 
-font-size = 9
+font-size = 8
 window-inherit-font-size = false
 font-feature = "'calt', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'ss09', 'liga'",
 font-variation = wght=300
