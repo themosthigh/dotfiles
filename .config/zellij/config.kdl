@@ -287,3 +287,4 @@ ui {
 }
 
 mirror_session true // prevents tearing on my helix config
+theme "kanagawa"
