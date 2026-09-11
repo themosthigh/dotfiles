@@ -12,8 +12,9 @@ args = ["oxlint", "--lsp"]
 [language-server.oxfmt]
 command = "npx"
 args = ["oxfmt", "--lsp"]
+
 [language-server.rust-analyzer]
-comman="rust-analyzer"
+command="rust-analyzer"
 
 [language-server.emmet]
 command = "emmet-language-server"

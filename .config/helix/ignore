@@ -1,0 +1,9 @@
+!.github/
+!.gitignore
+!.gitattributes
+
+node_modules/
+bootstrap/
+vendor/
+build/
+.husky/_/

@@ -9,6 +9,7 @@ bufferline = "multiple"
 color-modes = true
 end-of-line-diagnostics = "hint"
 auto-format = true
+path-completion = true
 
 
 auto-completion = true
@@ -21,6 +22,7 @@ select = "underline"
 
 [editor.file-picker]
 hidden = false
+git-ignore = false
 
 [editor.statusline]
 left = ["mode", "version-control"]
@@ -71,7 +73,7 @@ C-e = "expand_selection"
 
 [keys.normal.space]
 # LSP options
-l = {a = "code_action", f = ":format"}
+l = {a = "code_action", f = ":format", d = "goto_definition"}
 # Open Yazi from helix
 e = [
     ':sh rm -f /tmp/unique-file',
@@ -86,6 +88,8 @@ a = { q = ":quit-all", c = ":config-open" }
 [keys.normal.space.b]
 f = "buffer_picker"
 o = ":buffer-close-others"
+c = ":buffer-close"
+x = ":buffer-close!"
 
 [keys.normal.space.g]
 f = "changed_file_picker"

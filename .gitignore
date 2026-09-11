@@ -18,4 +18,6 @@
 .config/composer
 /wallpapers
 /.config/intelephense/workspace
-/.config/openlogi
+
+/.config/openlogi/*
+!/.config/openlogi/config.toml
